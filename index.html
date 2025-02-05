@@ -5,84 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>D&D Website</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="components/character-creation.css" />
   </head>
   <body>
     <header>
       <h1>Welcome to the D&D Website</h1>
       <nav>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#podcast">Podcast</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#blog">Blog</a></li>
+          <li><a href="#home" class="tab-link" data-tab="home">Home</a></li>
+          <li><a href="#about" class="tab-link" data-tab="about">About</a></li>
+          <li>
+            <a href="#podcast" class="tab-link" data-tab="podcast">Podcast</a>
+          </li>
+          <li><a href="#news" class="tab-link" data-tab="news">News</a></li>
+          <li><a href="#faq" class="tab-link" data-tab="faq">FAQ</a></li>
+          <li><a href="#blog" class="tab-link" data-tab="blog">Blog</a></li>
+          <li>
+            <a
+              href="#character-creation"
+              class="tab-link"
+              data-tab="character-creation"
+              >Character Creation</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
 
-    <section id="about">
-      <h2>About the Podcast</h2>
-      <p>
-        This section will contain information about the D&D podcast, including
-        what the podcast is about, who the hosts are, and what listeners can
-        expect from each episode.
-      </p>
-    </section>
+    <main>
+      <section id="home" class="tab-content">
+        <h2>Home</h2>
+        <p>Welcome to the D&D Website!</p>
+      </section>
 
-    <section id="podcast">
-      <h2>Podcast</h2>
-      <ul>
-        <li>
-          <a href="https://example.com/episode1"
-            >Episode 1: Introduction to D&D</a
+      <section id="about" class="tab-content">
+        <h2>About</h2>
+        <p>About the D&D Website.</p>
+      </section>
+
+      <section id="podcast" class="tab-content">
+        <h2>Podcast</h2>
+        <p>Podcast information.</p>
+      </section>
+
+      <section id="news" class="tab-content">
+        <h2>News</h2>
+        <p>Latest news.</p>
+      </section>
+
+      <section id="faq" class="tab-content">
+        <h2>FAQ</h2>
+        <p>Frequently Asked Questions.</p>
+      </section>
+
+      <section id="blog" class="tab-content">
+        <h2>Blog</h2>
+        <p>Blog posts.</p>
+      </section>
+
+      <section id="character-creation" class="tab-content">
+        <h2>Create Your D&D Character</h2>
+        <form id="character-form">
+          <div>
+            <label for="character-name">Name:</label>
+            <input
+              type="text"
+              id="character-name"
+              name="character-name"
+              required
+            />
+          </div>
+          <div>
+            <label for="character-class">Class:</label>
+            <select
+              id="character-class"
+              name="character-class"
+              required
+            ></select>
+          </div>
+          <div>
+            <label for="character-race">Race:</label>
+            <select id="character-race" name="character-race" required></select>
+          </div>
+          <div class="character-background">
+            <label for="character-background" class="form-label"
+              >Background:</label
+            >
+            <select
+              id="character-background"
+              name="character-background"
+              class="character-background-select"
+              required
+            ></select>
+          </div>
+          <div
+            class="dropzone"
+            id="equipment-dropzone"
+            aria-label="Equipment Dropzone"
           >
-        </li>
-        <li>
-          <a href="https://example.com/episode2"
-            >Episode 2: Creating Your First Character</a
+            <h3>Equipment</h3>
+            <!-- Draggable equipment items will be added here -->
+          </div>
+          <div
+            class="dropzone"
+            id="abilities-dropzone"
+            aria-label="Abilities Dropzone"
           >
-        </li>
-        <!-- Add more podcast episodes here -->
-      </ul>
-    </section>
+            <h3>Abilities</h3>
+            <!-- Draggable abilities items will be added here -->
+          </div>
+          <button type="submit">Create Character</button>
+        </form>
+        <button id="randomize-character">Randomize Character</button>
+        <button id="save-character">Save Character</button>
 
-    <section id="news">
-      <h2>News and Noteworthy</h2>
-      <p>
-        Stay updated with the latest news in the D&D world. From new rulebooks
-        to exciting campaigns, find out what's happening in the realm of
-        Dungeons & Dragons.
-      </p>
-    </section>
+        <section id="character-visual">
+          <h2>Character Visual Representation</h2>
+          <canvas id="character-canvas" width="400" height="400"></canvas>
+        </section>
 
-    <section id="faq">
-      <h2>FAQ</h2>
-      <ul>
-        <li>
-          <strong>What is D&D?</strong> - Dungeons & Dragons (D&D) is a fantasy
-          tabletop role-playing game.
-        </li>
-        <li>
-          <strong>How do I start playing?</strong> - Gather a group of friends,
-          get a rulebook, and start your adventure!
-        </li>
-        <!-- Add more FAQs here -->
-      </ul>
-    </section>
-
-    <section id="blog">
-      <h2>Blog</h2>
-      <p>
-        Read our latest blog posts and articles about D&D. Get tips, tricks, and
-        insights from experienced players.
-      </p>
-      <!-- Add blog posts here -->
-    </section>
+        <section id="character-sheet">
+          <h2>Character Sheet</h2>
+          <div id="character-sheet-content">
+            <!-- Character sheet details will be displayed here -->
+          </div>
+        </section>
+      </section>
+    </main>
 
     <footer>
       <p>Contact: email@example.com</p>
     </footer>
 
     <script src="script.js"></script>
+    <script src="components/character-creation.js"></script>
   </body>
 </html>

@@ -32,8 +32,20 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-section {
+main {
   margin: 2em;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+section {
+  margin: 2em 0;
   padding: 1em;
   background-color: white;
   border-radius: 8px;

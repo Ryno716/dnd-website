@@ -1,0 +1,12 @@
+{
+  "classes": [
+    { "value": "warrior", "label": "Warrior" },
+    { "value": "mage", "label": "Mage" },
+    { "value": "rogue", "label": "Rogue" }
+  ],
+  "races": [
+    { "value": "human", "label": "Human" },
+    { "value": "elf", "label": "Elf" },
+    { "value": "dwarf", "label": "Dwarf" }
+  ]
+}
